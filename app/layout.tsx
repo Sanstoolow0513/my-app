@@ -14,11 +14,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Harbor Notes",
-    template: "%s | Harbor Notes",
+    default: "港湾手记",
+    template: "%s | 港湾手记",
   },
   description:
-    "A personal blog about design, code, and the systems that keep work calm.",
+    "一份关于设计、代码与让工作保持平静的系统的个人博客。",
 };
 
 export default function RootLayout({
@@ -27,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="zh-CN">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

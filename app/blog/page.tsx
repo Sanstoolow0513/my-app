@@ -11,13 +11,12 @@ export default function BlogPage() {
       <SiteHeader />
       <main className="mx-auto max-w-5xl px-6 pb-16">
         <section className="mt-14 animate-rise delay-1">
-          <p className="eyebrow">Blog</p>
+          <p className="eyebrow">博客</p>
           <h1 className="mt-3 text-4xl font-semibold leading-tight text-ink">
-            Writing from the studio.
+            来自工作室的写作。
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-muted">
-            Short essays about design craft, building calm systems, and the
-            rhythm of shipping.
+            简短随笔，关于设计手艺、构建安静的系统，以及交付的节奏。
           </p>
         </section>
 

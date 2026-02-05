@@ -4,11 +4,11 @@ import SiteHeader from "@/components/site-header";
 import { formatDate, getAllPosts } from "@/lib/posts";
 
 const topics = [
-  "Product design",
-  "Frontend craft",
-  "Systems thinking",
-  "Weekly reviews",
-  "Writing rituals",
+  "产品设计",
+  "前端手艺",
+  "系统思维",
+  "每周复盘",
+  "写作仪式",
 ];
 
 export default function Home() {
@@ -20,48 +20,46 @@ export default function Home() {
       <main className="mx-auto max-w-6xl px-6 pb-16">
         <section className="mt-16 grid items-start gap-10 md:grid-cols-[1.1fr_0.9fr]">
           <div className="animate-rise delay-1 space-y-6">
-            <p className="eyebrow">Personal blog</p>
+            <p className="eyebrow">个人博客</p>
             <h1 className="text-4xl font-semibold leading-tight text-ink sm:text-5xl">
-              Harbor Notes is a quiet blog about design, code, and the systems
-              that keep me steady.
+              港湾手记是一份安静的博客，记录设计、代码，以及让我保持稳健的那些系统。
             </h1>
             <p className="text-lg leading-relaxed text-muted">
-              I write from the edge of product design and development, sharing
-              checklists, field notes, and gentle experiments to help teams move
-              with less noise.
+              我站在产品设计与开发的交界处写作，分享清单、现场笔记和温和的小实验，
+              帮助团队以更少噪音推进。
             </p>
             <div className="flex flex-wrap gap-3">
               <Link href="/blog" className="btn-primary">
-                Read the blog
+                阅读博客
               </Link>
               <Link href="#about" className="btn-secondary">
-                About me
+                关于我
               </Link>
             </div>
             <div className="flex flex-wrap items-center gap-4 text-sm text-muted">
               <span className="inline-flex items-center gap-2">
                 <span className="status-dot" />
-                Based in a small studio.
+                在一间小工作室工作。
               </span>
               <span className="inline-flex items-center gap-2">
                 <span className="status-dot accent" />
-                New note every two weeks.
+                每两周更新一篇。
               </span>
             </div>
           </div>
           <div className="surface shadow-soft animate-rise delay-2 p-6 md:p-8">
-            <p className="eyebrow">Now</p>
+            <p className="eyebrow">近况</p>
             <h2 className="mt-2 text-2xl font-semibold text-ink">
-              Currently exploring
+              正在探索
             </h2>
             <ul className="mt-4 space-y-3 text-sm text-muted">
-              <li>Designing a calm dashboard for daily priorities.</li>
-              <li>Rebuilding this blog in public with small steps.</li>
-              <li>Collecting tiny rituals that protect focus.</li>
+              <li>为每日优先级设计一块安静的仪表板。</li>
+              <li>以小步快跑的方式公开重建这份博客。</li>
+              <li>收集能守住专注力的小仪式。</li>
             </ul>
             <div className="mt-6 flex items-center justify-between rounded-2xl border border-outline bg-paper px-4 py-3 text-sm text-ink-soft">
-              <span>Last updated</span>
-              <span>Feb 2026</span>
+              <span>最近更新</span>
+              <span>2026年2月</span>
             </div>
           </div>
         </section>
@@ -71,23 +69,20 @@ export default function Home() {
           className="mt-20 grid items-start gap-8 md:grid-cols-[1.2fr_0.8fr]"
         >
           <div className="animate-rise delay-2 space-y-4">
-            <p className="eyebrow">About</p>
+            <p className="eyebrow">关于</p>
             <h2 className="text-3xl font-semibold text-ink">
-              Writing to make the work feel lighter.
+              写作，让工作变得更轻一些。
             </h2>
             <p className="leading-relaxed text-muted">
-              I am a product designer who ships code, and I keep a habit of
-              turning each project into a small system. This blog is where I keep
-              the notes I wish I had in the moment: templates, checklists, and
-              reflections on pacing.
+              我是会写代码的产品设计师，习惯把每个项目做成一个小系统。
+              这份博客记录的是我当时最想拥有的笔记：模板、清单，以及对节奏的反思。
             </p>
             <p className="leading-relaxed text-muted">
-              If you are building software with a small team, you will probably
-              find something useful here.
+              如果你在小团队里做软件，或许能在这里找到一些有用的东西。
             </p>
           </div>
           <div className="surface shadow-soft animate-rise delay-3 p-6">
-            <h3 className="text-lg font-semibold text-ink">Topics I return to</h3>
+            <h3 className="text-lg font-semibold text-ink">我常写的主题</h3>
             <div className="mt-4 flex flex-wrap gap-2">
               {topics.map((topic) => (
                 <span key={topic} className="chip">
@@ -101,11 +96,11 @@ export default function Home() {
         <section className="mt-20 animate-rise delay-2">
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
-              <p className="eyebrow">Featured</p>
-              <h2 className="text-3xl font-semibold text-ink">Latest writing</h2>
+              <p className="eyebrow">精选</p>
+              <h2 className="text-3xl font-semibold text-ink">最新文章</h2>
             </div>
             <Link href="/blog" className="text-sm text-accent transition hover:text-ink">
-              View all posts
+              查看全部文章
             </Link>
           </div>
           <div className="mt-8 grid gap-6 md:grid-cols-3">

@@ -6,18 +6,19 @@ import SiteHeader from "@/components/site-header";
 import { formatDate, getAllPosts, getPostBySlug } from "@/lib/posts";
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 export function generateStaticParams() {
   return getAllPosts().map((post) => ({ slug: post.slug }));
 }
 
-export function generateMetadata({ params }: Props): Metadata {
-  const post = getPostBySlug(params.slug);
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
 
   if (!post) {
-    return { title: "Post not found" };
+    return { title: "文章未找到" };
   }
 
   return {
@@ -26,8 +27,9 @@ export function generateMetadata({ params }: Props): Metadata {
   };
 }
 
-export default function PostPage({ params }: Props) {
-  const post = getPostBySlug(params.slug);
+export default async function PostPage({ params }: Props) {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
 
   if (!post) {
     notFound();
@@ -39,7 +41,7 @@ export default function PostPage({ params }: Props) {
       <main className="mx-auto max-w-3xl px-6 pb-16">
         <div className="mt-12 animate-rise delay-1">
           <Link href="/blog" className="text-sm text-muted transition hover:text-ink">
-            Back to blog
+            返回博客
           </Link>
         </div>
         <article className="surface shadow-soft mt-6 animate-rise delay-2 p-6 md:p-10">
